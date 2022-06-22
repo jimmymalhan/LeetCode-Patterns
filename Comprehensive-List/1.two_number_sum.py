@@ -32,9 +32,8 @@ class Solution:
         for index, value in enumerate(nums):
             potentialMatch = target - value # y = 9 - x
             if potentialMatch in hashMap:
-
-                return [hashMap[potentialMatch], index]
-            hashMap[value] = index
+                return [hashMap[potentialMatch], index] # return the index of y
+            hashMap[value] = index # x = value
         return []
 
 print(Solution().twoSum([2, 7, 11, 15], 9)) # [0, 1]
