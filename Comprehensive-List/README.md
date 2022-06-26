@@ -1,4 +1,5 @@
 # Comprhensive List for LeetCode-Patterns
 
-1. Arrays
-- [1. Two Sum - Easy](https://leetcode.com/problems/two-sum/)
+Arrays
+- [1. Two Sum - Easy | Video](https://www.youtube.com/watch?v=boSBPIjLJiY)
+on [LC-Question](https://leetcode.com/problems/two-sum/) 
