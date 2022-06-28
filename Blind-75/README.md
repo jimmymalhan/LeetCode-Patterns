@@ -1,4 +1,4 @@
-# Blind 75 for LeetCode-Patterns
+# Blind-75 for LeetCode-Patterns
 
 | Problem | Difficulty | Video | Code |
 | -------- | ------- | ----- | ---- |
