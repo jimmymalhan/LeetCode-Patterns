@@ -9,14 +9,6 @@ Notes:
 from typing import List
 
 class Solution:
-    # O(n^2) time | O(1) space - where n is the length of the array
-    def containsDuplicate(self, nums: List[int]) -> bool: # time exceeded
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] == nums[j]:
-                    return True
-        return False # time limit exceeded on leetcode
-
     # O(n) time | O(n) space - where n is the length of the array
     def containsDuplicate_set(self, nums: List[int]) -> bool:
         """
@@ -48,7 +40,6 @@ class Solution:
         return False
 
 
-print(Solution().containsDuplicate([1,2,3,1]))
 print(Solution().containsDuplicate_set([1,2,3,1]))
 print(Solution().containsDuplicate_sort([1,2,3,1]))
 print(Solution().containsDuplicate_short([1,2,3,1]))
