@@ -24,10 +24,11 @@ test case2 = 'rat', 'car'
 
 
 class Solution:
+    # O(n) time and O(1) space because of the dictionary where n is the length of the string
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t): # if the length of the two strings are not equal, they cannot be anagrams
             return False
-        d = {}
+        d = {} # created once per function call
         for character in s:
             d[character] = d.get(character, 0) + 1 # get(character, 0) returns 0 if character is not in d
 
@@ -38,7 +39,7 @@ class Solution:
             if d[character] < 0: # if the count of c in d is negative, return False
                 return False
         return True
-
+# O(nlogn) time and O(1) space because of the sorting of the strings where n is the length of the string
     def isAnagram2(self, s: str, t: str) -> bool:
         return sorted(s) == sorted(t)
 

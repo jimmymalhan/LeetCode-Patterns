@@ -9,7 +9,7 @@ Notes:
 from typing import List
 
 class Solution:
-    # O(n) time | O(n) space - where n is the length of the array
+    # O(n) time | O(n) space as we are iterating through the list - n is the length of the list
     def containsDuplicate_set(self, nums: List[int]) -> bool:
         """
         A set is a collection of: 
@@ -29,7 +29,7 @@ class Solution:
     def containsDuplicate_short(self, nums: List[int]) -> bool:
         return len(nums) != len(set(nums))
 
-    # O(nlogn) time | O(n) space - where n is the length of the array
+    # O(nlogn) time | O(n) space because of the sorting of the array where n is the length of the list
     def containsDuplicate_sort(self, nums: List[int]) -> bool:
         nums.sort()
         
