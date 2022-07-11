@@ -1,5 +1,5 @@
 # Blind-75 for LeetCode-Patterns
-    * Blind-75 are 75 LeetCode collections created by Tech-Leads by MAANG and most widely accepted by the community from leetcode and are the most commonly used leetcode patterns.
+- Blind-75 are 75 LeetCode collections created by Tech-Leads by MAANG and most widely accepted by the community from leetcode and are the most commonly used leetcode patterns.
 
 | Problem | Difficulty | Video | Code |
 | -------- | ------- | ----- | ---- |
