@@ -6,7 +6,7 @@
 
 ## Two curated Lists of LeetCode-Patterns:
 - Blind-75:
-    * Blind-75 are 75 LeetCode collections created by Tech-Leads by MAANG and most widely accepted by the community from leetcode and blind and are the most commonly used leetcode patterns.
+    * Blind-75 are 75 LeetCode collections created by Tech-Leads by MAANG and most widely accepted by the community from leetcode and are the most commonly used leetcode patterns.
 
 -  Comprehensive-List:
     * Comprehensive-List is an extensive list of ~200 LeetCode problems I picked up from leetcode. It includes all the common LeetCode patterns from Blind 75 and some extra additions to practice.
