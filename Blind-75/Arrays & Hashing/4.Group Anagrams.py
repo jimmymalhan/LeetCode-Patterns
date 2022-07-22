@@ -1,3 +1,5 @@
+# Group Anagrams
+
 """
 Notes:
 
@@ -13,23 +15,21 @@ We create a dictionary and for each word in the input array, we add a key to the
 # O(w*n*log(n)) time | O(wn) space - where w is the length of the word and n is the length of the list
 
 from typing import List
-import collections
+from collections import defaultdict
 from collections import Counter
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        dic = collections.defaultdict(list) # defaultdict(list) creates a list for each key
+        dic = defaultdict(list)
         for s in strs:
             dic[''.join(sorted(s))].append(s) 
             # or 
             # dic[tuple(sorted(s))].append(s)
 
-        return dic.values()
-
+        return list(dic.values())
 
 # Another way to solve is to create frozenSet out of a Counter. This way we can use frozenset as a key in a dictionary, and provides optimized time complexity without the need to sort the word.
 # O(w*n) time | O(wn) space - where w is the length of the word and n is the length of the list
-
 
     def groupAnagrams2(self, strs: List[str]) -> List[List[str]]:
         anagrams = {}
