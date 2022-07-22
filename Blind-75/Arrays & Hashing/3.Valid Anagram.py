@@ -28,7 +28,7 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         return sorted(s) == sorted(t)
 
-    # O(n) time and O(1) space because of the dictionary where n is the length of the string
+    # O(n) time and O(n) space because of the dictionary where n is the length of the string
     def isAnagram2(self, s: str, t: str) -> bool:
         if len(s) != len(t): # if the length of the two strings are not equal, they cannot be anagrams
             return False
