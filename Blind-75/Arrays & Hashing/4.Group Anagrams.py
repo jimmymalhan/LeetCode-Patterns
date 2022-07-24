@@ -7,7 +7,7 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 
 Anagrams are strings which have identical counts of characters. So anagrams, when sorted, result in the same string.
 
-- We create a defaultdict(list) and we assign it to dic.
+- We create a defaultdict(list) to store the anagrams.
 - We iterate through the list of strings and we create a sorted string of the characters in each word.
 - We join the sorted string to create a string and append the word to the list of anagrams.
 - We return the list of anagrams.
