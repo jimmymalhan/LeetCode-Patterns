@@ -1,7 +1,10 @@
 # Top K Frequent Elements
 
 """
-
+1. Create an empty dictionary called frequency.
+2. Loop through the nums list and for each number in the list, add 1 to the frequency dictionary.
+3. Sort the frequency dictionary by value and reverse it.
+4. Return the keys of the first k elements of the dictionary. 
 """
 
 from typing import List
@@ -35,9 +38,11 @@ class Solution:
 			# 	frequency[num] = 1
 
 		# print(frequency) # 2nd test case {3: 1, 0: 2, 1: 1}
-		frequency = dict(sorted(frequency.items(), key=lambda x: x[1], reverse=True)) # sort by value
-		# print(frequency) # 2nd test case {0: 2, 3: 1, 1: 1}
-		return list(frequency.keys())[:k] # return the keys of the first k elements of the dictionary # [:k] slices the dictionary to return the first k elements 
+		# frequency = dict(sorted(frequency.items(), key=lambda x: x[1], reverse=True)) # sort by value
+		# # print(frequency) # 2nd test case {0: 2, 3: 1, 1: 1}
+		# return list(frequency.keys())[:k] # return the keys of the first k elements of the dictionary # [:k] slices the dictionary to return the first k elements 
+		# # or  
+		return sorted(frequency, key=frequency.get, reverse=True)[:k] # return the keys of the first k elements of the dictionary # [:k] slices the dictionary to return the first k elements
 
 
 	""" 
@@ -67,7 +72,16 @@ class Solution:
 		dic = Counter(nums)
 		return nlargest(k, dic, key=dic.get) # nlargest returns the k largest elements of the iterable
 	
+	# heapq
 	# O(NlogN) time and O(N) space
+	"""
+	1. We initialize a dictionary d with keys as the numbers in nums and values as -1.
+	2. We initialize a heap h with the values of the dictionary d.
+	3. We initialize a count variable to 0.
+	4. We keep popping the smallest element from the heap h until the count is less than k.
+	5. We append the smallest element to the result.
+	6. We increment the count by 1.
+	"""
 	def topKFrequent5(self, nums: List[int], k: int) -> List[int]:
 		if not nums:
 			return []
@@ -79,13 +93,13 @@ class Solution:
 		d = {}
 		for num in nums:
 			if num in d:
-				d[num] -= 1 # reverse the sign on the freq for the heap's sake # why do we need to reverse the sign? because the heap is a min heap and we want the largest element to become the smallest element
+				d[num] -= 1 # why decrement? because we want the largest frequency
 			else:
-				d[num] = -1
+				d[num] = -1 # set the frequency of the number to -1
 
 		h = []
 		for key in d:
-			heappush(h, (d[key], key)) # (freq, item) - O(log(N))
+			heappush(h, (d[key], key)) # (freq, item) - O(log(N)) 
 
 		res = []
 		count = 0
@@ -102,13 +116,16 @@ class Solution:
 	5. We continue this process until the length of the heap h is less than k.
 	6. We return the result.
 	"""
+
 # O(nlog(k)) time and O(k) space
 	def topKFrequent6(self, nums: List[int], k: int) -> List[int]:
+		if not nums:
+			return []
+
 		if len(nums) == 1:
-			return [nums[0]]
+			return nums[0]
 		
 		d = Counter(nums)
-		# insert k items into heap O(nlog(k))
 		h = []
 
 		for key in d: # O(N)
@@ -122,8 +139,8 @@ class Solution:
 			res.append(item) # append the item to the result - O(1)
 		return res
 
-print(Solution().topKFrequent([1,1,1,2,2,3], 2)) # [1,2] or [2,1]
-print(Solution().topKFrequent([3,0,1,0], 1)) # [0]
+print(Solution().topKFrequent([1,1,1,2,2,3], 2))  # [1,2] or [2,1]
+print(Solution().topKFrequent([3,0,1,0], 1))  # [0]
 print(Solution().topKFrequent2([1,1,1,2,2,3], 2)) # [1,2] or [2,1]
 print(Solution().topKFrequent2([3,0,1,0], 1)) # [0]
 print(Solution().topKFrequent3([3,0,1,0], 1)) # [0]
