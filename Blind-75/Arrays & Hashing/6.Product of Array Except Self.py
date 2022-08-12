@@ -1,4 +1,15 @@
-# Prodcy of Array Except Self
+# Product of Array Except Self
+"""
+Question explanation:
+Input - 1,2,3,4
+for 1st element -  2 * 3 * 4 = 24
+for 2nd element -  1 * 3 * 4 = 12
+for 3rd element -  1 * 2 * 4 = 8
+for 4th element -  1 * 2 * 3 = 6
+
+Output- 24,12,8,6
+"""
+
 
 from typing import List
 """
