@@ -9,3 +9,4 @@
 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | [Video](https://www.youtube.com/watch?v=rSm_2SyDPjY) | [Python](https://github.com/jimmymalhan/LeetCode-Patterns/blob/main/Blind-75/Arrays%20%26%20Hashing/4.Group%20Anagrams.py)
 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | Medium | [Video]| [Python](https://github.com/jimmymalhan/LeetCode-Patterns/blob/main/Blind-75/Arrays%20%26%20Hashing/5.Top%20K%20Frequent%20Elements.py)
 | [Product of Array Except Self](https://leetcode.com/problems/top-k-frequent-elements/) | Medium | [Video]| [Python](https://github.com/jimmymalhan/LeetCode-Patterns/blob/main/Blind-75/Arrays%20%26%20Hashing/5.Top%20K%20Frequent%20Elements.py)
+| [Encode and Decode Strings](https://www.lintcode.com/problem/659/) | Medium | [Video]| [Python]()
