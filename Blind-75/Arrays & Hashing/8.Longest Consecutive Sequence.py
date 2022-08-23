@@ -25,8 +25,8 @@ class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         if not nums: return 0
         
-        # nums.sort()
-        nums = set(nums)
+        # nums.sort() # O(nlog(n))
+        nums = set(nums) # O(n)
         longest = 0
 
         for num in nums:
