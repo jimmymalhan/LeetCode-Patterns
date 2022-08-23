@@ -1,7 +1,7 @@
 # Contains Duplicate
 
 """
-Notes:
+Question Explanation:
 - If the value appears more than once, return true.
 - If the value appears only once, return false.
 """
@@ -38,8 +38,6 @@ class Solution:
 
     def containsDuplicate_short(self, nums: List[int]) -> bool:
         return len(nums) != len(set(nums))
-
-
 
 print(Solution().containsDuplicate_set([1,2,3,1]))
 print(Solution().containsDuplicate_sort([1,2,3,1]))

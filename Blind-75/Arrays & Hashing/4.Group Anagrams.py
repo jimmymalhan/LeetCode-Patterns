@@ -1,12 +1,13 @@
 # Group Anagrams
 
 """
-Notes:
+Question Explanation::
 
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 Anagrams are strings which have identical counts of characters. So anagrams, when sorted, result in the same string.
 
+Solution Explanation:
 - We create a defaultdict(list) to store the anagrams.
 - We iterate through the list of strings and we create a sorted string of the characters in each word.
 - We join the sorted string to create a string and append the word to the list of anagrams.
@@ -30,6 +31,7 @@ class Solution:
 
         return list(dic.values())
 
+# Solution Explanation:
 # Another way to solve is to create frozenSet out of a Counter. This way we can use frozenset as a key in a dictionary, and provides optimized time complexity without the need to sort the word.
 # The frozenset() is an inbuilt function in Python which takes an iterable object as input and makes them immutable. Simply it freezes the iterable objects and makes them unchangeable.
 

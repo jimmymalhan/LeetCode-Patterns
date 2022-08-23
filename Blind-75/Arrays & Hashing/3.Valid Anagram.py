@@ -1,11 +1,11 @@
 # Valid Anagram
 """
-Notes:
-- if the two strings are the same length, then they must be anagrams
-- create a dictionary to store the characters and their counts
-- iterate through the first string and add the characters to the dictionary
-- iterate through the second string and subtract the characters from the dictionary
-- if the dictionary is empty, then the strings are anagrams
+Solution Explanation::
+- If the two strings are the same length, then they must be anagrams.
+- Create a dictionary to store the characters and their counts
+- Iterate through the first string and add the characters to the dictionary
+- Iterate through the second string and subtract the characters from the dictionary
+- If the dictionary is empty, then the strings are anagrams
 
 test case1 = 'anagram', 'nagaram'
 {'a': 1}

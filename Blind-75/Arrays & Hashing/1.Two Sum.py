@@ -1,7 +1,7 @@
 # Two Sum
 
 """
-Notes:
+Question Explanation:
 - We are guranteed to have exactly one solution
 - We don't have to worry about not finding a solution
 - We don't have to worry about multiple solutions
@@ -22,11 +22,11 @@ class Solution:
 # O(n) time | O(1) space
     def twoSum_HashMap(self, nums: List[int], target: int) -> List[int]:
         """
-        target = 9
-        currentNum = x
+        Solution Explanation:
+        From the input1 - target = 9, currentNum = x
         x + y = 9
         y = 9 - x
-        now, is there a y in the hashmap? if so, return the index of y
+        now, if there is a 'y' in the hashmap? if so, return the index of y
         """
         hashMap = {}
         for index, value in enumerate(nums):

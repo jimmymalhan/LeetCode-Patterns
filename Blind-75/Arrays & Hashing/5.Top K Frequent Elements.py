@@ -1,6 +1,7 @@
 # Top K Frequent Elements
 
 """
+Solution Explanation:
 1. Create an empty dictionary called frequency.
 2. Loop through the nums list and for each number in the list, add 1 to the frequency dictionary.
 3. Sort the frequency dictionary by value and reverse it.
@@ -46,6 +47,7 @@ class Solution:
 
 
 	""" 
+	Solution Explanation:
 	1. Create a defaultdict to store the count of each number.
 	2. For each number in nums, add 1 to the count of that number.
 	3. Sort the dictionary by the count of each number.
@@ -55,14 +57,18 @@ class Solution:
 		for num in nums:
 			dic[num] += 1
 		return sorted(dic, key=dic.get, reverse=True)[:k]
+
 	""" 
+	Solution Explanation:
 	1. Create a dictionary to store the number and its frequency.
 	2. Loop through the list of numbers and update the dictionary.
 	3. Loop through the dictionary and return the top k numbers. """
 	def topKFrequent3(self, nums: List[int], k: int) -> List[int]:
 		dic = Counter(nums)
 		return [key for key, value in dic.most_common(k)]
+
 	"""
+	Solution Explanation:
 	1. Create a dictionary called dic.
 	2. Use the Counter function to count the number of times each element appears in the list.
 	3. Use the nlargest function to return the k largest elements of the dictionary.
@@ -75,6 +81,7 @@ class Solution:
 	# heapq
 	# O(NlogN) time and O(N) space
 	"""
+	Solution Explanation:
 	1. We initialize a dictionary d with keys as the numbers in nums and values as -1.
 	2. We initialize a heap h with the values of the dictionary d.
 	3. We initialize a count variable to 0.
@@ -108,7 +115,9 @@ class Solution:
 			res.append(item) # append the smallest element to the result
 			count += 1
 		return res
+
 	"""
+	Solution Explanation:
 	1. We create a counter d which is a dictionary where the key is the item and the value is the frequency of the item.
 	2. We create a heap h which is a list of tuples.
 	3. We iterate through the list nums and for each item in nums, we add the item to the counter d and we add the item and its frequency to the heap h.

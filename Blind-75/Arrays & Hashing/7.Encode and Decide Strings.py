@@ -4,7 +4,7 @@
 # Design an algorithm to encode a list of strings to a string. The encoded string is then sent over the network and is decoded back to the original list of strings.
 
 """
-Notes:
+Question Explanation:
 - Premium 'leetcode' problem solving on 'lintcode'.
 -  It's a Design Algorithm to encode input to a string and decode the string to the original input.
 - We can have any possible input but not just lowercase input. 
@@ -15,15 +15,13 @@ Notes:
 AND we can't store the count of the characters for each string in separate data structure it needs be stateless.
 eg: "leet", "co#de",counts are [4, 5]. We can't store [4, 5] in a separate data structure to refer.
 
-- Solution:
+Solution Explanation:
 - We can store it in the string of the input. So, Read the count of each character in the input, add a delimiter between the count and the character. It will only read the count of the character after the delimiter '#'.
 - Even if we have delimiter '#' and integer in the input. We can still read the count of the character after the assigned delimiter '#'.
 eg: input: "leet", "#eet", "##et", "#ee6".
 - We will read the count of the characters in strings ONLY after the assigned delimiter '#'. 
 eg: 4#"leet", 4#"#eet", 4#"##et", 4#"#ee6".
 """
-
-from typing import List  
 
 # O(n) time and O(n) space
 class Solution:
