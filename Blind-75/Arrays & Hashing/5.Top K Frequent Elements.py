@@ -7,7 +7,7 @@ Question Explanation:
 
 # Solutions Overview for [1,1,1,2,2,3]:
 1 - O(nlog(n)) - Take the pairs of element from the array {1: 3, 2: 2, 3: 1}  and sort them in descending order. {3: 1, 2: 2, 1: 3}
-2 - O(klog(n)) - We can use maxheap and add the pairs to the heap and then pop the most frequent element from the heap k times. {3: 1, 2: 2, 1: 3}
+2 - O(klog(n)) - We can use maxHeap and add the pairs to the heap and then pop the most frequent element from the heap k times. {3: 1, 2: 2, 1: 3}
 3 - O(n) Bucket sort - map the index as count to value. {3: 1, 2: 2, 1: 3}
 |--------------------------------------|
 |i (count) |0| 1 |  2 |  3 | 4 | 5 | 6 |
@@ -17,7 +17,7 @@ Question Explanation:
 - Max size of the above table based on the length of the array which makes it O(n). Count of this array [1,1,1,2,2,3] is 6.
 - It will be n + 1 because of the 0 index.
 
-Edge Case - What if we have distinct elements in the array?
+- Edge Case - What if we have distinct elements in the array?
 If the element in the array is distinct, it can still remain O(n) time coz all the elements will fall under the same index in the table.
 
 Solution Explanation:
