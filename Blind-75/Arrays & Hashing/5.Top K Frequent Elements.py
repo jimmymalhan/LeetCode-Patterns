@@ -77,12 +77,6 @@ class Solution:
 
 # O(nlog(k)) time and O(k) space
 	def topKFrequent2(self, nums: List[int], k: int) -> List[int]:
-		if not nums:
-			return []
-
-		if len(nums) == 1:
-			return nums[0]
-		
 		d = Counter(nums)
 		h = []
 
