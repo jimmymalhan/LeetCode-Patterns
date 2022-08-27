@@ -7,7 +7,7 @@ Question Explanation:
 
 # Solutions Overview for [1,1,1,2,2,3]:
 1 - O(nlog(n)) - Take the pairs of element from the array {1: 3, 2: 2, 3: 1}  and sort them in descending order. {3: 1, 2: 2, 1: 3}
-2 - O(klog(n)) - We can use maxHeap and add the pairs to the heap and then pop the most frequent element from the heap k times. {3: 1, 2: 2, 1: 3}
+2 - O(nlog(k)) - We can use maxHeap and add the pairs to the heap and then pop the most frequent element from the heap k times. {3: 1, 2: 2, 1: 3}
 3 - O(n) Bucket sort - map the index as count to value. {3: 1, 2: 2, 1: 3}
 |--------------------------------------|
 |i (count) |0| 1 |  2 |  3 | 4 | 5 | 6 |
@@ -64,44 +64,6 @@ class Solution:
 		# return list(frequency.keys())[:k] # return the keys of the first k elements of the dictionary # [:k] slices the dictionary to return the first k elements 
 		# # or  
 		return sorted(frequency, key=frequency.get, reverse=True)[:k] # return the keys of the first k elements of the dictionary # [:k] slices the dictionary to return the first k elements
-	
-	# heapq
-	# O(NlogN) time and O(N) space
-	"""
-	Solution Explanation:
-	1. We initialize a dictionary d with keys as the numbers in nums and values as -1.
-	2. We initialize a heap h with the values of the dictionary d.
-	3. We initialize a count variable to 0.
-	4. We keep popping the smallest element from the heap h until the count is less than k.
-	5. We append the smallest element to the result.
-	6. We increment the count by 1.
-	"""
-	def topKFrequent2(self, nums: List[int], k: int) -> List[int]:
-		if not nums:
-			return []
-
-		if len(nums) == 1:
-			return nums[0]
-
-		# first find freq - freq dict
-		d = {}
-		for num in nums:
-			if num in d:
-				d[num] -= 1 # why decrement? because we want the largest frequency
-			else:
-				d[num] = -1 # set the frequency of the number to -1
-
-		h = []
-		for key in d:
-			heappush(h, (d[key], key)) # (freq, item) - O(log(N)) 
-
-		res = []
-		count = 0
-		while count < k: # while the count is less than k, keep popping the smallest element
-			frq, item = heappop(h) # heappop returns the smallest element of the heap h and removes it from h - O(log(N))
-			res.append(item) # append the smallest element to the result
-			count += 1
-		return res
 
 	"""
 	Solution Explanation:
@@ -114,7 +76,7 @@ class Solution:
 	"""
 
 # O(nlog(k)) time and O(k) space
-	def topKFrequent3(self, nums: List[int], k: int) -> List[int]:
+	def topKFrequent2(self, nums: List[int], k: int) -> List[int]:
 		if not nums:
 			return []
 
@@ -142,7 +104,7 @@ class Solution:
 
 	# Bucket Sort
 	# O(n) time and O(k) space
-	def topKFrequent4(self, nums: List[int], k: int) -> List[int]:
+	def topKFrequent3(self, nums: List[int], k: int) -> List[int]:
 		count  = {}
 		freq = [[] for i in range(len(nums) + 1)]
 
@@ -170,8 +132,6 @@ print(Solution().topKFrequent2([3,0,1,0], 1)) # [0]
 print(Solution().topKFrequent2([1,1,1,2,2,3], 2)) # [1,2] or [2,1]
 print(Solution().topKFrequent3([3,0,1,0], 1)) # [0]
 print(Solution().topKFrequent3([1,1,1,2,2,3], 2)) # [1,2] or [2,1]
-print(Solution().topKFrequent4([3,0,1,0], 1)) # [0]
-print(Solution().topKFrequent4([1,1,1,2,2,3], 2)) # [1,2] or [2,1]
 
 
 ###################### One-Liner Solutions ######################
